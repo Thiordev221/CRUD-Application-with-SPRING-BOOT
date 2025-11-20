@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Formations - EduManager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            EduManager
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="etudiant.html">Étudiants</a></li>
+            <li><a href="formation.html" class="active">Formations</a></li>
+            <li><a href="inscription.html">Inscriptions</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-book"></i>
+            Gestion des Formations
+        </h1>
+        <p>Organisez et gérez toutes vos formations académiques</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Rechercher par nom de formation...">
+        </div>
+        <button class="btn btn-primary" onclick="openAddModal()">
+            <i class="fas fa-plus"></i>
+            Ajouter une formation
+        </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+        <div id="loadingState" class="loading">
+            <i class="fas fa-spinner"></i>
+            <p>Chargement des formations...</p>
+        </div>
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h3>Aucune formation trouvée</h3>
+            <p>Commencez par ajouter votre première formation</p>
+        </div>
+        <table id="formationsTable" style="display: none;">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom de la formation</th>
+                <th>Description</th>
+                <th>Formateur</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="formationsTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div id="paginationContainer" class="pagination-container" style="display: none;">
+        <div class="pagination-info">
+            <span id="paginationInfo">Affichage de 0 à 0 sur 0 formations</span>
+        </div>
+        <div class="pagination" id="paginationButtons">
+        </div>
+        <div class="page-size-selector">
+            <label for="pageSize">Éléments par page:</label>
+            <select id="pageSize">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Add/Edit -->
+<div id="formationModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="fas fa-book"></i>
+                <span id="modalTitle">Ajouter une formation</span>
+            </h2>
+            <button class="close-modal" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <form id="formationForm">
+            <input type="hidden" id="formationId">
+            <div class="form-group">
+                <label for="nom">Nom de la formation *</label>
+                <input type="text" id="nom" required placeholder="Ex: Licence Informatique">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Décrivez les objectifs et le contenu de la formation..."></textarea>
+            </div>
+            </div><div class="form-group">
+                <label for="formateur">Nom du formateur *</label>
+                <input type="text" id="formateur" required placeholder="Ex: Mr Gueye">
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">
+                    Annuler
+                </button>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i>
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage"></span>
+</div>
+
+<script src="formation.js">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManager - Gestion des Étudiants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            EduManager
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="etudiant.html">Étudiants</a></li>
+            <li><a href="formation.html">Formations</a></li>
+            <li><a href="inscription.html">Inscriptions</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenue sur EduManager</h1>
+        <p>La solution complète pour gérer efficacement vos étudiants, formations et inscriptions</p>
+        <a href="#features" class="cta-button">Découvrir</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="features-container">
+        <h2 class="section-title">Pourquoi choisir EduManager ?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Gain de temps</h3>
+                <p>Automatisez vos tâches administratives et gagnez jusqu'à 70% de temps sur la gestion quotidienne de vos étudiants.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Fiabilité maximale</h3>
+                <p>Système sécurisé avec sauvegarde automatique des données. Vos informations sont protégées et toujours accessibles.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Suivi en temps réel</h3>
+                <p>Visualisez instantanément les inscriptions, les formations et les statistiques de votre établissement.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Gestion intuitive</h3>
+                <p>Interface simple et ergonomique permettant une prise en main rapide par tous les utilisateurs.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Accessible partout</h3>
+                <p>Application responsive accessible depuis n'importe quel appareil : ordinateur, tablette ou smartphone.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Synchronisation</h3>
+                <p>Toutes vos données sont synchronisées en temps réel pour une cohérence parfaite des informations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="stats-container">
+        <div class="stat-item">
+            <h2 id="stat1">0</h2>
+            <p>Étudiants gérés</p>
+        </div>
+        <div class="stat-item">
+            <h2 id="stat2">0</h2>
+            <p>Formations disponibles</p>
+        </div>
+        <div class="stat-item">
+            <h2 id="stat3">0</h2>
+            <p>Inscriptions actives</p>
+        </div>
+        <div class="stat-item">
+            <h2>99.9%</h2>
+            <p>Disponibilité</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>EduManager</h3>
+            <p>La solution moderne pour la gestion académique. Simplifiez votre administration et concentrez-vous sur l'essentiel.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Liens rapides</h3>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="etudiants.html">Étudiants</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="inscriptions.html">Inscriptions</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 EduManager. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

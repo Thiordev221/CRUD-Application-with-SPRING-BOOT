@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Étudiants - EduManager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            EduManager
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="etudiant.html" class="active">Étudiants</a></li>
+            <li><a href="formation.html">Formations</a></li>
+            <li><a href="inscription.html">Inscriptions</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-users"></i>
+            Gestion des Étudiants
+        </h1>
+        <p>Gérez efficacement tous vos étudiants en quelques clics</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Rechercher par prénom...">
+        </div>
+
+        <button class="btn btn-primary" onclick="openAddModal()">
+            <i class="fas fa-plus"></i>
+            Ajouter un étudiant
+        </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+        <div id="loadingState" class="loading">
+            <i class="fas fa-spinner"></i>
+            <p>Chargement des étudiants...</p>
+        </div>
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h3>Aucun étudiant trouvé</h3>
+            <p>Commencez par ajouter votre premier étudiant</p>
+        </div>
+        <table id="studentsTable" style="display: none;">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="studentsTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div id="paginationContainer" class="pagination-container" style="display: none;">
+        <div class="pagination-info">
+            <span id="paginationInfo">Affichage de 0 à 0 sur 0 étudiants</span>
+        </div>
+        <div class="pagination" id="paginationButtons">
+        </div>
+        <div class="page-size-selector">
+            <label for="pageSize">Éléments par page:</label>
+            <select id="pageSize">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Add/Edit -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="fas fa-user-plus"></i>
+                <span id="modalTitle">Ajouter un étudiant</span>
+            </h2>
+            <button class="close-modal" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <form id="studentForm">
+            <input type="hidden" id="studentId">
+            <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom"  required>
+            </div>
+            <div class="form-group">
+                <label id="label" for="email">Email *</label>
+                <input type="email" id="email"  required>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">
+                    Annuler
+                </button>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-save"></i>
+                    Enregistrer
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage"></span>
+</div>
+
+<script src="etudiant.js">
+
+</script>
+</body>
+</html>
